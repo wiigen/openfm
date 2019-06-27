@@ -3,24 +3,28 @@ package com.jw.openfm.domain;
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
 
-import lombok.Data;
-
-@Data
 public class Person {
-    private final String firstname;
-    private final String lastname;
-    private final LocalDate birthdate;
+    private final Name name;
+    private final LocalDate dateOfBirth;
 
-    //TODO: kan være fler - kanskje vurdere å opprette egne objekter for nasjoner.
-    private String nationality;
-
-    public String getName() {
-        return ((firstname != null ? firstname : "") +
-                " " + (lastname != null ? lastname : "")).trim();
+    public Person(Name name, LocalDate dateOfBirth) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
     }
 
+    //TODO: multiple? - add Nationality as a class instead of string.
+    private String nationality;
+
     public int getAge(LocalDate gamedate) {
-        return Years.yearsBetween(birthdate, gamedate).getYears();
+        return Years.yearsBetween(dateOfBirth, gamedate).getYears();
+    }
+
+    public Name getName() {
+        return name;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
 }

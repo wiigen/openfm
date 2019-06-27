@@ -1,16 +1,14 @@
-package com.jw.openfm;
-
-import static org.junit.Assert.*;
+package com.jw.openfm.domain;
 
 import org.junit.Test;
 
-import com.jw.openfm.domain.Position;
+import static org.junit.Assert.assertEquals;
 
 public class PositionTest {
 
     @Test
     public void testGetDescription() {
-        assertEquals("Goalkeeper", Position.GK.getDescription());;
+        assertEquals("Goalkeeper", Position.GK.getDescription());
     }
 
     @Test

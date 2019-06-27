@@ -1,22 +1,28 @@
 package com.jw.openfm.service;
 
+import com.jw.openfm.domain.Game;
+import com.jw.openfm.domain.League;
+import com.jw.openfm.util.IOUtils;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import com.jw.openfm.domain.Game;
-import com.jw.openfm.util.IOUtils;
-
 public class GameService {
 
     /**
+     * Starts a new game
      * 
-     * @param name
+     * @param name Name of the game
      * @return
      */
     public Game startGame(String name) {
         return new Game(name);
+    }
+
+    public void selectLeague(Game game, League league) {
+        game.setSelectedLeague(league);
     }
 
     /**
@@ -26,7 +32,7 @@ public class GameService {
      * @return Gameobject loaded into memory
      */
     public Game loadGame(String filename) {
-        FileInputStream fis = null;
+        FileInputStream fis;
         ObjectInputStream in = null;
         try {
             fis = new FileInputStream(filename);
@@ -40,7 +46,7 @@ public class GameService {
     }
 
     public void saveGame(Game game) {
-        FileOutputStream fos = null;
+        FileOutputStream fos;
         ObjectOutputStream out = null;
         try {
             fos = new FileOutputStream(game.getName() + ".game");

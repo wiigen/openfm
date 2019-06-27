@@ -9,8 +9,8 @@ public class ManagerTest {
 
     @Test
     public void testGetName() {
-        Manager manager = new Manager("Jurgen", "Klopp", LocalDate.now());
-        assertEquals("Jurgen Klopp", manager.getName());
+        Manager manager = new Manager(new Name("Jurgen", "Klopp"), LocalDate.now());
+        assertEquals("Jurgen Klopp", manager.getName().getFullname());
     }
 
 }

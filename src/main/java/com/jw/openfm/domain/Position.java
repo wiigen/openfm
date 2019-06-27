@@ -1,8 +1,5 @@
 package com.jw.openfm.domain;
 
-import lombok.Getter;
-
-@Getter
 public enum Position {
     GK("Goalkeeper"),
     DL("Left back"),
@@ -20,4 +17,9 @@ public enum Position {
     Position(String description) {
         this.description = description;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
 }

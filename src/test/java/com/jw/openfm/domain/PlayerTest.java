@@ -9,7 +9,7 @@ public class PlayerTest {
 
     @Test
     public void testGetPosition() {
-        Player player = new Player("Garreth", "Bale", LocalDate.now(), Position.MR);
+        Player player = new Player(new Name("Garreth", "Bale"), LocalDate.now(), Position.MR);
         assertEquals(Position.MR, player.getPosition());
     }
 

@@ -2,9 +2,6 @@ package com.jw.openfm.domain;
 
 import org.joda.time.LocalDate;
 
-import lombok.Getter;
-
-@Getter
 public class Player extends Person {
 
     private final Position position;
@@ -32,9 +29,12 @@ public class Player extends Person {
      * -  private int reflexes; 
      */
 
-    public Player(String firstname, String lastname, LocalDate birthdate, Position position) {
-        super(firstname, lastname, birthdate);
+    public Player(Name name, LocalDate birthdate, Position position) {
+        super(name, birthdate);
         this.position = position;
     }
 
+    public Position getPosition() {
+        return position;
+    }
 }

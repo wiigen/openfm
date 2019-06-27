@@ -1,12 +1,9 @@
 package com.jw.openfm.domain;
 
-import java.io.Serializable;
-
 import org.joda.time.LocalDate;
 
-import lombok.Data;
+import java.io.Serializable;
 
-@Data
 public class Game implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -14,8 +11,11 @@ public class Game implements Serializable {
     private final String name;
 
     private League selectedLeague;
-
     private LocalDate gamedate;
+
+    public Game(String name) {
+        this.name = name;
+    }
 
     /**
      * Update gamedate
@@ -25,5 +25,17 @@ public class Game implements Serializable {
     public void setGamedate(LocalDate gamedate) {
         this.gamedate = gamedate;
     }
+
+    public String getName() {
+        return name;
+    }
+
+	public League getSelectedLeague() {
+		return selectedLeague;
+	}
+
+	public void setSelectedLeague(League selectedLeague) {
+		this.selectedLeague = selectedLeague;
+	}
 
 }

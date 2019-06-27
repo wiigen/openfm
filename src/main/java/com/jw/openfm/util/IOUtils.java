@@ -8,7 +8,7 @@ public class IOUtils {
         if (closeable != null) {
             try {
                 closeable.close();
-            } catch (IOException e) {
+            } catch (IOException ignored) {
             }
         }
     }
